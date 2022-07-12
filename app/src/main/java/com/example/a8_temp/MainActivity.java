@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference ref = database.getReference("A8");
         DatabaseReference usersRef = ref.child("users");
 
-            final boolean[] isPresent = {true};
+            final boolean[] isPresent = {false};
             try {
                 ValueEventListener valueEventListener = new ValueEventListener() {
                     @Override
@@ -90,9 +90,8 @@ public class MainActivity extends AppCompatActivity {
                               isPresent[0]=true;
                            }
                         }
-
+                        userInfo.setUserName(userInfo.getUserName().toUpperCase());
                         if(!isPresent[0]){
-                            userInfo.setUserName(userInfo.getUserName().toUpperCase());
                             usersRef.push().setValue(userInfo);
                             Toast toast = Toast.makeText(MainActivity.this,
                                     "You have registered as a user!",

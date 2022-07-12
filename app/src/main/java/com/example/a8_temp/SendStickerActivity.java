@@ -38,7 +38,7 @@ public class SendStickerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String enteredReciverUsername=stickerReciverUserNameEditText.getText().toString();
+                String enteredReciverUsername=stickerReciverUserNameEditText.getText().toString().toUpperCase();
                 if(TextUtils.isEmpty(enteredReciverUsername)){
                     Toast.makeText(SendStickerActivity.this,"Enter reciver username",
                             Toast.LENGTH_SHORT)
@@ -54,7 +54,7 @@ public class SendStickerActivity extends AppCompatActivity {
                         String receiverToken=null;
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
                             UserInfo value=ds.getValue(UserInfo.class);
-                            if(value.getUserName().equals(enteredReciverUsername.toLowerCase())){
+                            if(value.getUserName().equals(enteredReciverUsername)){
                                 receiverToken=value.getToken();
                             }
 
@@ -80,7 +80,7 @@ public class SendStickerActivity extends AppCompatActivity {
                                 SendNotificationService sendNotificationService=new SendNotificationService();
                                 try {
                                     sendNotificationService.sendNotficationImpl(SendStickerActivity.this,
-                                            "Username:"+userInfo.getUserName()+" got a new sticker!",
+                                            "Username:"+enteredReciverUsername+" got a new sticker from"+userInfo.getUserName(),
                                             stickerId,
                                             finalReceiverToken);
                                 } catch (JSONException e) {
