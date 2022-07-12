@@ -45,7 +45,6 @@ public class StickerHistoryActivity extends AppCompatActivity implements Sticker
                 List<StickerUserInfoRelation> stickerUserInfoRelations =new ArrayList<StickerUserInfoRelation>();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     StickerUserInfoRelation value=ds.getValue(StickerUserInfoRelation.class);
-                    System.out.println(value);
                     if(value.getReceiverUserName().equals(userInfo.getUserName())){
                         stickerUserInfoRelations.add(value);
                     }

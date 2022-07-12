@@ -110,14 +110,12 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-                        System.out.println("I am here1");
                     }
                 };
                 usersRef.addListenerForSingleValueEvent(valueEventListener);
             } catch(Exception e){
                 System.out.println(e);
             }
-            // System.out.println("finished");
 
             return isPresent[0];
 

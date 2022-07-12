@@ -81,7 +81,6 @@ public class MyStickerRecycleViewAdaptor extends RecyclerView.Adapter<MyStickerR
                     @Override
                     public void onClick(View v) {
                         String stickerId=myStickerImgView.getContentDescription().toString();
-                        System.out.println("stickerId of selected:"+stickerId);
                         if(!TextUtils.isEmpty(stickerId)) {
                             Intent intent = new Intent(context, SendStickerActivity.class);
                             intent.putExtra("stickerId", stickerId);

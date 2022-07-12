@@ -38,7 +38,6 @@ public class HomeActivity extends AppCompatActivity implements MyStickerRecycleV
        stickerHistoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("sticker history button is clicked!");
                 Intent intent =new Intent(HomeActivity.this, StickerHistoryActivity.class);
                 intent.putExtra("UserInfo", userInfo);
                 startActivity(intent);

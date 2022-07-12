@@ -56,7 +56,6 @@ public class GetDataFromFirebase<T> {
             ValueEventListener valueEventListener = new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    System.out.println("I am here");
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         T value = ds.getValue(typeParameterClass);
                         if (value.toString().equals(t.toString())) {
@@ -73,7 +72,6 @@ public class GetDataFromFirebase<T> {
             };
             rootRef.addListenerForSingleValueEvent(valueEventListener);
         } catch(Exception e){
-            System.out.println(e);
         }
 System.out.println("finished");
 

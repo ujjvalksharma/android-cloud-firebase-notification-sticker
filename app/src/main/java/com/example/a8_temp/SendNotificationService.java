@@ -33,7 +33,6 @@ public class SendNotificationService {
                 notification.put("title", title);
                 notification.put("body", body);
                 json.put("notification", notification);
-System.out.println("notification object made");
                 JsonObjectRequest
                         jsonObjReq
                         = new JsonObjectRequest(
@@ -48,7 +47,6 @@ System.out.println("notification object made");
                             @Override
                             public void onErrorResponse(VolleyError error) {
 
-                                System.out.println("error:"+error);
                             }
 
                         }) {
