@@ -54,7 +54,7 @@ public class SendStickerActivity extends AppCompatActivity {
                         String receiverToken=null;
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
                             UserInfo value=ds.getValue(UserInfo.class);
-                            if(value.getUserName().equals(enteredReciverUsername)){
+                            if(value.getUserName().equals(enteredReciverUsername.toLowerCase())){
                                 receiverToken=value.getToken();
                             }
 

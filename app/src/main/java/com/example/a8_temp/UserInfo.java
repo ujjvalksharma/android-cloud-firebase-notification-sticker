@@ -25,6 +25,14 @@ public class UserInfo implements Serializable {
         return token;
     }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public String toString() {
         return "UserInfo{" +

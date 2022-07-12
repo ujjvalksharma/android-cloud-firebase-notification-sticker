@@ -85,12 +85,14 @@ public class MainActivity extends AppCompatActivity {
 
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
                             UserInfo value=ds.getValue(UserInfo.class);
-                           if(value.toString().equals(userInfo.toString())){
+                           if(value.getUserName().equalsIgnoreCase(userInfo.getUserName())
+                             &&value.getToken().equals(userInfo.getToken())){
                               isPresent[0]=true;
                            }
                         }
 
                         if(!isPresent[0]){
+                            userInfo.setUserName(userInfo.getUserName().toUpperCase());
                             usersRef.push().setValue(userInfo);
                             Toast toast = Toast.makeText(MainActivity.this,
                                     "You have registered as a user!",
