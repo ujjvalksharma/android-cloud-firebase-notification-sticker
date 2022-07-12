@@ -121,44 +121,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
- /*   private void saveUserDetails(UserInfo userInfo) {
-
-
-        final FirebaseDatabase database = FirebaseDatabase.getInstance("https://fir-example-e11f0-default-rtdb.firebaseio.com/");
-        DatabaseReference ref = database.getReference("A8");
-
-
-
-    }
-*/
-
-
-
 }
-
-/*
-            //   FirebaseDatabase  firebaseDatabase = FirebaseDatabase.getInstance("https://fir-example-e11f0-default-rtdb.firebaseio.com/");
-     //   DatabaseReference databaseReference = firebaseDatabase.getReference("UserInfo");
-       databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                databaseReference.push("userInfo").setValue(userInfo);
-                Map<String, UserInfo> users = new HashMap<>();
-                users.put(userInfo.getUserName(), userInfo);
-                users.put(userInfo.getUserName(), userInfo);
-
-                usersRef.setValue(users);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-//   Map<String, UserInfo> users = new HashMap<>();
-// users.put(userInfo.getUserName(), userInfo);
-// users.put(userInfo.getUserName(), userInfo);
-
- */

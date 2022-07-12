@@ -80,7 +80,7 @@ public class SendStickerActivity extends AppCompatActivity {
                                 SendNotificationService sendNotificationService=new SendNotificationService();
                                 try {
                                     sendNotificationService.sendNotficationImpl(SendStickerActivity.this,
-                                            "Username:"+enteredReciverUsername+" got a new sticker from"+userInfo.getUserName(),
+                                            "Username:"+enteredReciverUsername+" got a new sticker from "+userInfo.getUserName(),
                                             stickerId,
                                             finalReceiverToken);
                                 } catch (JSONException e) {
