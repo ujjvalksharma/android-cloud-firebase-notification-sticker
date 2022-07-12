@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements MyStickerRecycleV
         userInfo = (UserInfo) getIntent().getSerializableExtra("UserInfo");
         myStickerTextView=(TextView) findViewById(R.id.myStickerTextView);
        Button stickerHistoryBtn= (Button) findViewById(R.id.stickerHistoryBtn);
-       findTotalSendStickerCount();
+       //findTotalSendStickerCount();
        stickerHistoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,6 +62,12 @@ public class HomeActivity extends AppCompatActivity implements MyStickerRecycleV
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        findTotalSendStickerCount();
     }
 
     private void findTotalSendStickerCount() {
