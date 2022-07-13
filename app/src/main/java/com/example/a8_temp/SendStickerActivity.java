@@ -31,7 +31,7 @@ public class SendStickerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send_sticker);
         Intent intent = getIntent();
         this.stickerId=intent.getStringExtra("stickerId");
-        stickerReciverUserNameEditText= (EditText) findViewById(R.id.stickerReciverUserNameEditText);
+        stickerReciverUserNameEditText = (EditText) findViewById(R.id.stickerReciverUserNameEditText);
         userInfo = (UserInfo) getIntent().getSerializableExtra("UserInfo");
         Button sendStickerBtn= (Button) findViewById(R.id.sendStickerBtn);
         sendStickerBtn.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +65,7 @@ public class SendStickerActivity extends AppCompatActivity {
                             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
                             StickerUserInfoRelation stickerUserInfoRelation=new StickerUserInfoRelation(stickerId,
                                     userInfo.getUserName(),
-                                    userInfo.getUserName(),
+                                    enteredReciverUsername,
                                     timestamp.toString());
                             //save StickerUserInfoRelation in firebase
                             DatabaseReference stickerUserRelationRef = ref.child("StickerUserRelation");
